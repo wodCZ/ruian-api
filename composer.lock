@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "23d342d2bb688712f84d0265f54813ee",
-    "content-hash": "948df7d115bd70f6c1f980efac5553ce",
+    "hash": "46ce00306ffed9e1f691d0a82a2247ae",
+    "content-hash": "feacdafb15f2bf0cedca0a803c4d07bc",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -275,6 +275,50 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "hobnob/xml-stream-reader",
+            "version": "v1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hobnob/xmlStreamReader.git",
+                "reference": "fc26cbc5d5802fa5db7d46277ae6cc9bf4c4ee3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hobnob/xmlStreamReader/zipball/fc26cbc5d5802fa5db7d46277ae6cc9bf4c4ee3e",
+                "reference": "fc26cbc5d5802fa5db7d46277ae6cc9bf4c4ee3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Hobnob\\XmlStreamReader": "/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David North",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP SAX XML Stream Reader",
+            "homepage": "https://github.com/hobnob/xmlStreamReader",
+            "keywords": [
+                "stream",
+                "xml"
+            ],
+            "time": "2015-03-10 15:52:44"
         },
         {
             "name": "jakub-onderka/php-console-color",

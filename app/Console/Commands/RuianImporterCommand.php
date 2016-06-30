@@ -45,7 +45,6 @@ class RuianImporterCommand extends Command
         $fullLink = \Ruian::getLatestFullCountryLink();
 
         $this->importLink($fullLink);
-        return;
 
         $fullCitiesLinks = \Ruian::getLatestFullCitiesLinks();
         $this->output->success('Got '.count($fullCitiesLinks).' cities links');
@@ -57,6 +56,10 @@ class RuianImporterCommand extends Command
 
     private function importLink($link)
     {
+        if(\Ruian::isImported($link)){
+            return;
+        }
+
         $file = \Ruian::downloadFile($link);
         $this->output->success($link . ' downloaded.');
 
@@ -74,6 +77,8 @@ class RuianImporterCommand extends Command
         });
         
         $progress->finish();
+
+        \Ruian::markImported($link);
 
     }
 

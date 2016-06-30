@@ -21,6 +21,16 @@ class Ruian
         return $latest;
     }
 
+    public function isImported($link)
+    {
+        return \DB::collection('links')->where('link', '=', $link)->count() === 1;
+    }
+
+    public function markImported($link)
+    {
+        \DB::collection('links')->insert(['link' => $link]);
+    }
+
     public function getLatestFullCitiesLinks()
     {
 
@@ -55,23 +65,23 @@ class Ruian
 
         $nodes = [
             'stat' => '/vf:VymennyFormat/vf:Data/vf:Staty/vf:Stat',
-            'regionSoudrznosti' => '/vf:VymennyFormat/vf:Data/vf:RegionySoudrznosti/vf:RegionSoudrznosti',
+//            'regionSoudrznosti' => '/vf:VymennyFormat/vf:Data/vf:RegionySoudrznosti/vf:RegionSoudrznosti',
             'kraj' => '/vf:VymennyFormat/vf:Data/vf:Kraje/vf:Kraj',
-            'vusc' => '/vf:VymennyFormat/vf:Data/vf:Vusc/vf:Vusc',
+//            'vusc' => '/vf:VymennyFormat/vf:Data/vf:Vusc/vf:Vusc',
             'okres' => '/vf:VymennyFormat/vf:Data/vf:Okresy/vf:Okres',
-            'orp' => '/vf:VymennyFormat/vf:Data/vf:Orp/vf:Orp',
-            'pou' => '/vf:VymennyFormat/vf:Data/vf:Pou/vf:Pou',
+//            'orp' => '/vf:VymennyFormat/vf:Data/vf:Orp/vf:Orp',
+//            'pou' => '/vf:VymennyFormat/vf:Data/vf:Pou/vf:Pou',
             'obec' => '/vf:VymennyFormat/vf:Data/vf:Obce/vf:Obec',
             'castObce' => '/vf:VymennyFormat/vf:Data/vf:CastiObci/vf:CastObce',
-            'mop' => '/vf:VymennyFormat/vf:Data/vf:Mop/vf:Mop',
-            'spravniObvod' => '/vf:VymennyFormat/vf:Data/vf:SpravniObvody/vf:SpravniObvod',
-            'momc' => '/vf:VymennyFormat/vf:Data/vf:Momc/vf:Momc',
-            'katastralniUzemi' => '/vf:VymennyFormat/vf:Data/vf:KatastralniUzemi/vf:KatastralniUzemi',
-            'parcela' => '/vf:VymennyFormat/vf:Data/vf:Parcely/vf:Parcela',
+//            'mop' => '/vf:VymennyFormat/vf:Data/vf:Mop/vf:Mop',
+//            'spravniObvod' => '/vf:VymennyFormat/vf:Data/vf:SpravniObvody/vf:SpravniObvod',
+//            'momc' => '/vf:VymennyFormat/vf:Data/vf:Momc/vf:Momc',
+//            'katastralniUzemi' => '/vf:VymennyFormat/vf:Data/vf:KatastralniUzemi/vf:KatastralniUzemi',
+//            'parcela' => '/vf:VymennyFormat/vf:Data/vf:Parcely/vf:Parcela',
             'ulice' => '/vf:VymennyFormat/vf:Data/vf:Ulice/vf:Ulice',
             'stavebniObjekt' => '/vf:VymennyFormat/vf:Data/vf:StavebniObjekty/vf:StavebniObjekt',
             'adresniMisto' => '/vf:VymennyFormat/vf:Data/vf:AdresniMista/vf:AdresniMisto',
-            'zsj' => '/vf:VymennyFormat/vf:Data/vf:Zsj/vf:Zsj',
+//            'zsj' => '/vf:VymennyFormat/vf:Data/vf:Zsj/vf:Zsj',
         ];
 
         foreach ($nodes as $name => $xpath) {

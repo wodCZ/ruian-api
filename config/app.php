@@ -162,6 +162,9 @@ return [
 
         \App\Providers\RuianProvider::class,
 
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+
+
     ],
 
     /*
